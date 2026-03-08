@@ -3,6 +3,10 @@ dist/
 coverage/
 .turbo/
 .sisyphus/
+.codex/
+.vscode/
+opencode.json
+opencode.jsonc
 .env
 .env.*
 npm-debug.log*
