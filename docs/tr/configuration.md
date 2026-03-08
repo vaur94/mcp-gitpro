@@ -19,3 +19,10 @@
 - `context.toolsets`
 - `context.tools`
 - `output.pageSize`, `output.maxFileLines`, `output.maxDiffLines`, `output.maxBodyChars`
+
+## Pratik varsayilanlar
+
+- `pageSize`: `20`
+- `maxFileLines`: `200`
+- `maxDiffLines`: `200`
+- `maxBodyChars`: `6000`
