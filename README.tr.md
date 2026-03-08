@@ -35,13 +35,40 @@
 
 ## Hizli baslangic
 
+### Yerel kurulum script'i
+
+```bash
+bash ./scripts/install-local.sh
+```
+
+Bu script bagimliliklari kurar, stdio sunucusunu derler ve testleri calistirir.
+
+### Elle kurulum
+
 ```bash
 npm install
 npm run build
 npm test
 ```
 
-`MCP_GITPRO_GITHUB_TOKEN` degiskenini ayarlayin veya `mcp-gitpro.config.json` icine yazin.
+`MCP_GITPRO_GITHUB_TOKEN` degiskenini shell ortaminda ayarlayin veya MCP host konfigurasyonundan gecirin. Dosya tabanli kurulum isterseniz `mcp-gitpro.config.json` kopyasini kullanin ve token'i repoya yazmayin.
+
+## Host Entegrasyonu
+
+| Host            | Konfigurasyon formati                                                           | Dokuman                                                       |
+| --------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| OpenCode        | `opencode.json` icinde `mcp.<ad>.type = "local"` ve `command` dizisi            | [OpenCode entegrasyonu](./docs/integration/opencode.md)       |
+| Codex CLI / IDE | `~/.codex/config.toml` veya `.codex/config.toml` icinde `[mcp_servers.<ad>]`    | [Codex entegrasyonu](./docs/integration/codex.md)             |
+| Antigravity     | absolute executable path, args ve env degiskenleri ile `mcpServers` JSON girisi | [Antigravity entegrasyonu](./docs/integration/antigravity.md) |
+| VS Code         | `.vscode/mcp.json` benzeri `command`, `args` ve `env` alanlari                  | [VS Code entegrasyonu](./docs/integration/vscode.md)          |
+
+Tum local stdio host'larda ortak degerler:
+
+- command: `node`
+- ana arguman: `/absolute/path/to/mcp-gitpro/dist/index.js`
+- config arguman cifti: `--config /absolute/path/to/mcp-gitpro/mcp-gitpro.config.json`
+- env: `MCP_GITPRO_GITHUB_TOKEN=...`
+- stdout sadece MCP icin ayrilmali; loglar stderr'e gitmeli
 
 ## Proje Yapisi
 
@@ -72,6 +99,7 @@ docs/
 - [Konfigurasyon](./docs/configuration.md)
 - [Araclar](./docs/tools.md)
 - [OpenCode entegrasyonu](./docs/integration/opencode.md)
+- [Codex entegrasyonu](./docs/integration/codex.md)
 - [VS Code entegrasyonu](./docs/integration/vscode.md)
 - [Antigravity entegrasyonu](./docs/integration/antigravity.md)
 
