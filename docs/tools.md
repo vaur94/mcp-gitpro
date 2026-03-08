@@ -19,3 +19,4 @@
 - Okuma araclari salt-okunur modda acik kalir.
 - Yazma araclari `context.readOnly=true` ise kayittan dusurulur.
 - Buyuk yanitlar modele gitmeden once kirpilir.
+- `actions_read`, satir ici log onizlemesi yerine workflow metaverisi ve log indirme adresi dondurur.

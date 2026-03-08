@@ -8,5 +8,7 @@ Bu temel kurulum stdio-first kalir ve yerel shell, git CLI, dosya duzenleme ve H
 - Yazma yapabilen arac aileleri icin salt-okunur anahtari
 - Arac seti ve arac allowlist alanlari
 - Yanit boyutunu sinirlayan cikti limitleri
+- Actions loglari govde icine gomulmez; GitHub indirme adresi ayri olarak dondurulur
+- stdout yalnizca MCP protokol trafigine ayrilir
 
 Gercek GitHub islemleri eklenirken bu sinirlar acik bicimde korunmalidir.
