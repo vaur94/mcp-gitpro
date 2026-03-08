@@ -32,6 +32,14 @@
   "publishConfig": {
     "access": "public"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vaur94/mcp-gitpro.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vaur94/mcp-gitpro/issues"
+  },
+  "homepage": "https://github.com/vaur94/mcp-gitpro#readme",
   "keywords": [
     "mcp",
     "model-context-protocol",
