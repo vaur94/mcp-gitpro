@@ -152,6 +152,7 @@ mcp-gitpro/
 - Turkce docs index: [`docs/tr/README.md`](./docs/tr/README.md)
 - English configuration: [`docs/en/configuration.md`](./docs/en/configuration.md)
 - Turkce configuration: [`docs/tr/configuration.md`](./docs/tr/configuration.md)
+- Security policy: [`.github/SECURITY.md`](./.github/SECURITY.md)
 
 ## 🧪 Kalite Kapilari
 
