@@ -2,16 +2,79 @@
 
 🇬🇧 English | [🇹🇷 Turkce](./README.tr.md)
 
-> `mcp-gitpro` is a stdio-first GitHub MCP server for AI agents, built on `@vaur94/mcpbase` with a compact, context-efficient tool surface.
+> ✨ A production-ready, stdio-first GitHub MCP server built on `@vaur94/mcpbase`.
 
-## Why mcp-gitpro
+`mcp-gitpro` gives AI agents a compact GitHub tool surface without drifting into local git, filesystem mutation, shell execution, or browser automation. The goal is simple: high-value GitHub workflows, low context waste, and clear safety boundaries.
 
-- GitHub cloud workflows only: no local git CLI and no filesystem editing overlap
-- Small tool inventory with high-value read/write coverage
-- Read-only mode plus toolset and exact-tool allowlists to reduce context waste
-- Bilingual docs and IDE integration guides for OpenCode, VS Code, and Antigravity
+## ✨ Why mcp-gitpro
 
-## Toolsets
+- GitHub-focused tool surface for repositories, issues, pull requests, search, and Actions
+- Read-only mode, toolset allowlists, and exact-tool allowlists to reduce token waste
+- Strict TypeScript, stdio-first runtime, protocol tests, and release automation
+- Bilingual documentation with clearly separated English and Turkish doc trees
+- Built on the published `@vaur94/mcpbase` package instead of a local fork
+
+## 📦 Installation
+
+### Requirements
+
+- Node.js `>=22.14.0`
+- npm `>=10`
+- A GitHub token available as `MCP_GITPRO_GITHUB_TOKEN`
+
+### Local install script
+
+```bash
+bash ./scripts/install-local.sh
+```
+
+The script installs dependencies, builds the server, and runs the test suite.
+
+### Manual setup
+
+```bash
+npm install
+npm run build
+npm test
+```
+
+Use `mcp-gitpro.config.json` for repo defaults and behavior flags, and keep secrets out of source control.
+
+## ⚡ Quick Start
+
+### Minimal local launch
+
+```bash
+export MCP_GITPRO_GITHUB_TOKEN=YOUR_GITHUB_TOKEN
+node ./dist/index.js --config ./mcp-gitpro.config.json
+```
+
+### Quality gate before connecting a host
+
+```bash
+npm run ci:check
+```
+
+### Common stdio values across hosts
+
+- launcher: `node`
+- entrypoint: `/absolute/path/to/mcp-gitpro/dist/index.js`
+- config flag: `--config /absolute/path/to/mcp-gitpro/mcp-gitpro.config.json`
+- token: `MCP_GITPRO_GITHUB_TOKEN=...`
+- protocol rule: stdout is reserved for MCP; logs belong on stderr
+
+## 🔌 Integration Guides
+
+| Host            | Integration model                                      | Guide                                               |
+| --------------- | ------------------------------------------------------ | --------------------------------------------------- |
+| OpenCode        | `opencode.json` local MCP entry with command array     | [OpenCode](./docs/en/integration/opencode.md)       |
+| Codex CLI / IDE | `config.toml` with `[mcp_servers.<name>]`              | [Codex](./docs/en/integration/codex.md)             |
+| VS Code         | workspace MCP JSON with `command`, `args`, and `env`   | [VS Code](./docs/en/integration/vscode.md)          |
+| Antigravity     | `mcpServers` JSON entry with absolute executable paths | [Antigravity](./docs/en/integration/antigravity.md) |
+
+## 🧰 Tool Surface
+
+### Toolsets
 
 - `context`
 - `repos`
@@ -20,7 +83,7 @@
 - `pull_requests`
 - `actions`
 
-## Tools
+### Tools
 
 - `github_context`
 - `repository_read`
@@ -33,80 +96,86 @@
 - `actions_read`
 - `actions_write`
 
-## Quick Start
+## ⚙️ Configuration
 
-### Local install script
+Configuration precedence:
 
-```bash
-bash ./scripts/install-local.sh
-```
+1. built-in defaults
+2. `mcp-gitpro.config.json`
+3. `MCP_GITPRO_*` environment variables
+4. CLI flags handled by `mcpbase`
 
-The script installs dependencies, builds the stdio server, and runs the test suite.
+Important fields:
 
-### Manual setup
+- `auth.githubToken`
+- `defaults.owner`
+- `defaults.repo`
+- `defaults.apiBaseUrl`
+- `context.readOnly`
+- `context.toolsets`
+- `context.tools`
+- `output.pageSize`
+- `output.maxFileLines`
+- `output.maxDiffLines`
+- `output.maxBodyChars`
 
-```bash
-npm install
-npm run build
-npm test
-```
-
-Set `MCP_GITPRO_GITHUB_TOKEN` in your shell or pass it through your MCP host config. If you prefer a file-based setup, copy `mcp-gitpro.config.json` and keep the token out of source control.
-
-## Host Integration
-
-| Host            | Config format                                                              | Docs                                                            |
-| --------------- | -------------------------------------------------------------------------- | --------------------------------------------------------------- |
-| OpenCode        | `opencode.json` with `mcp.<name>.type = "local"` and `command` array       | [OpenCode integration](./docs/en/integration/opencode.md)       |
-| Codex CLI / IDE | `~/.codex/config.toml` or `.codex/config.toml` with `[mcp_servers.<name>]` | [Codex integration](./docs/en/integration/codex.md)             |
-| Antigravity     | `mcpServers` JSON entry with absolute executable path, args, and env vars  | [Antigravity integration](./docs/en/integration/antigravity.md) |
-| VS Code         | `.vscode/mcp.json` style config with `command`, `args`, and `env`          | [VS Code integration](./docs/en/integration/vscode.md)          |
-
-Common values for every local stdio host:
-
-- command: `node`
-- main arg: `/absolute/path/to/mcp-gitpro/dist/index.js`
-- config arg pair: `--config /absolute/path/to/mcp-gitpro/mcp-gitpro.config.json`
-- env: `MCP_GITPRO_GITHUB_TOKEN=...`
-- stdout: reserve for MCP only; logs must stay on stderr
-
-## Project Layout
+## 🏗️ Project Shape
 
 ```text
-src/
-  config/
-  github/
-  core/
-  shared/
-  tools/
-tests/
-  unit/
-  protocol/
-docs/
+mcp-gitpro/
+|- src/
+|  |- config/
+|  |- core/
+|  |- github/
+|  |- shared/
+|  |- tools/
+|- tests/
+|  |- unit/
+|  |- protocol/
+|- docs/
+|  |- en/
+|  |- tr/
+|- scripts/
 ```
 
-## mcpbase Integration
+## 🔗 mcpbase Integration
 
-- `mcp-gitpro` depends on `@vaur94/mcpbase` from npm; it does not fork or vendor the base framework.
-- Startup is wired manually with `ApplicationRuntime`, `createMcpServer`, and `startStdioServer` for tighter control over GitHub-specific context creation.
-- Configuration extends `mcpbase` with `createRuntimeConfigSchema` and `loadConfig`, while per-tool execution context extends `BaseToolExecutionContext` with `GitHubClient`.
-- Streamable HTTP, telemetry, and generic filesystem or shell security helpers remain intentionally unused because this product stays stdio-first and GitHub-API focused.
+- `mcp-gitpro` depends on the published `@vaur94/mcpbase` package from npm
+- startup is wired with `ApplicationRuntime`, `createMcpServer`, and `startStdioServer`
+- config loading extends `mcpbase` through `createRuntimeConfigSchema` and `loadConfig`
+- execution context extends `BaseToolExecutionContext` with `GitHubClient`
+- streamable HTTP and telemetry remain intentionally unused in this GitHub-specific stdio product
 
-## Documentation
+## 📚 Documentation
 
-- [English docs index](./docs/README.en.md)
-- [Turkce docs index](./docs/README.tr.md)
-- [Configuration](./docs/en/configuration.md)
-- [Tools](./docs/en/tools.md)
-- [OpenCode integration](./docs/en/integration/opencode.md)
-- [Codex integration](./docs/en/integration/codex.md)
-- [VS Code integration](./docs/en/integration/vscode.md)
-- [Antigravity integration](./docs/en/integration/antigravity.md)
+- English docs index: [`docs/en/README.md`](./docs/en/README.md)
+- Turkish docs index: [`docs/tr/README.md`](./docs/tr/README.md)
+- English configuration: [`docs/en/configuration.md`](./docs/en/configuration.md)
+- Turkish configuration: [`docs/tr/configuration.md`](./docs/tr/configuration.md)
 
-## Non-goals
+## 🧪 Quality Gates
+
+```bash
+npm run build
+npm run typecheck
+npm run test
+npm run test:coverage
+npm run test:protocol
+npm run ci:check
+```
+
+## 🛡️ Scope and Non-goals
+
+This repository intentionally excludes:
 
 - local git CLI workflows
 - filesystem editing or patch application
 - shell execution
 - browser automation
 - HTTP transport in v1
+
+Security controls include token-based auth, read-only mode, tool allowlists, output caps, and out-of-band Actions log delivery.
+
+## 📄 License
+
+MIT - see [`LICENSE`](./LICENSE).
