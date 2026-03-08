@@ -13,6 +13,7 @@
 ## Entegrasyonlar
 
 - [OpenCode](./integration/opencode.md)
+- [Codex](./integration/codex.md)
 - [VS Code](./integration/vscode.md)
 - [Antigravity](./integration/antigravity.md)
 

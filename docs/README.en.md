@@ -13,6 +13,7 @@ Welcome to the `mcp-gitpro` documentation scaffold.
 ## Integrations
 
 - [OpenCode](./en/integration/opencode.md)
+- [Codex](./en/integration/codex.md)
 - [VS Code](./en/integration/vscode.md)
 - [Antigravity](./en/integration/antigravity.md)
 
