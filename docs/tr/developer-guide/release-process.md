@@ -12,7 +12,4 @@
 - `GITHUB_TOKEN`
 - `NPM_TOKEN`
 
-## Notlar
-
-- Bu iskelet yalnizca surum konfigurasyonunu ekler.
-- `NPM_TOKEN` yoksa release isi atlanir ve taze repoda kalite CI yesil kalir.
+`NPM_TOKEN` yoksa release isi atlanir ve taze repoda kalite CI yesil kalir.

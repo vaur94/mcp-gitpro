@@ -2,9 +2,10 @@
 
 ## Kurulum
 
-1. Bagimliliklari kurun.
-2. Paketi derleyin.
-3. Birim testleri ve protokol smoke testini calistirin.
+1. `npm install`
+2. `npm run build`
+3. `npm test`
+4. `npm run ci:check`
 
 ## Onemli Dosyalar
 
@@ -22,4 +23,7 @@
 - `src/context.ts`, `BaseToolExecutionContext` uzerine GitHub'a ozgu `GitHubClient` baglamini ekler.
 - Toolset allowlist ve salt-okunur filtreleme bu repoda `src/core/tool-filtering.ts` icinde uygulanir; HTTP transport ve telemetry ise urun kapsaminda olmadigi icin kullanilmaz.
 
-Bu depo su anda tam GitHub davranisindan cok paket sekline ve kaynak sinirlarina odaklanir.
+## Notlar
+
+- Protokol testleri derlenmis `dist/index.js` giris noktasini kullanir.
+- Unit testler GitHub davranisini mock'lar ve canli API erisimi gerektirmez.
