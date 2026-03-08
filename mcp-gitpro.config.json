@@ -1,0 +1,27 @@
+{
+  "server": {
+    "name": "mcp-gitpro",
+    "version": "0.1.0"
+  },
+  "logging": {
+    "level": "info",
+    "includeTimestamp": true
+  },
+  "auth": {
+    "githubToken": "github_pat_replace_me"
+  },
+  "defaults": {
+    "apiBaseUrl": "https://api.github.com"
+  },
+  "context": {
+    "readOnly": false,
+    "toolsets": ["context", "repos", "search", "issues", "pull_requests", "actions"],
+    "tools": []
+  },
+  "output": {
+    "pageSize": 30,
+    "maxFileLines": 400,
+    "maxDiffLines": 400,
+    "maxBodyChars": 20000
+  }
+}

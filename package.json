@@ -1,0 +1,91 @@
+{
+  "name": "mcp-gitpro",
+  "version": "0.1.0",
+  "description": "Stdio-first GitHub-focused MCP server scaffold built on @vaur94/mcpbase.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "mcp-gitpro": "./bin/cli.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "README.md",
+    "README.tr.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=22.14.0",
+    "npm": ">=10.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "overrides": {
+    "@semantic-release/npm": "^13.1.5"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "github",
+    "typescript",
+    "stdio"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "tsup",
+    "clean": "rimraf coverage dist .turbo",
+    "dev": "tsup --watch",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run tests/unit tests/protocol",
+    "test:unit": "vitest run tests/unit",
+    "test:protocol": "npm run build && vitest run tests/protocol",
+    "test:coverage": "vitest run tests/unit --coverage",
+    "ci:check": "npm run format:check && npm run lint && npm run typecheck && npm run test:coverage && npm run test:protocol",
+    "release": "semantic-release",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.27.1",
+    "@vaur94/mcpbase": "^2.0.0",
+    "zod": "^4.1.12"
+  },
+  "peerDependencies": {
+    "@modelcontextprotocol/sdk": ">=1.27.1",
+    "zod": ">=3.23.0 || >=4.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^11.0.6",
+    "@semantic-release/npm": "^13.1.5",
+    "@types/node": "^24.5.2",
+    "@vitest/coverage-v8": "^3.2.4",
+    "eslint": "^9.39.1",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^16.4.0",
+    "prettier": "^3.6.2",
+    "rimraf": "^6.0.1",
+    "semantic-release": "^24.2.9",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.46.0",
+    "vitest": "^3.2.4"
+  }
+}
