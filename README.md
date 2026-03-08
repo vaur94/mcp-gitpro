@@ -58,6 +58,13 @@ tests/
 docs/
 ```
 
+## mcpbase Integration
+
+- `mcp-gitpro` depends on `@vaur94/mcpbase` from npm; it does not fork or vendor the base framework.
+- Startup is wired manually with `ApplicationRuntime`, `createMcpServer`, and `startStdioServer` for tighter control over GitHub-specific context creation.
+- Configuration extends `mcpbase` with `createRuntimeConfigSchema` and `loadConfig`, while per-tool execution context extends `BaseToolExecutionContext` with `GitHubClient`.
+- Streamable HTTP, telemetry, and generic filesystem or shell security helpers remain intentionally unused because this product stays stdio-first and GitHub-API focused.
+
 ## Documentation
 
 - [English docs index](./docs/README.en.md)

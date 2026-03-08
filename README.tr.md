@@ -58,6 +58,13 @@ tests/
 docs/
 ```
 
+## mcpbase Entegrasyonu
+
+- `mcp-gitpro`, `@vaur94/mcpbase` paketini npm bagimliligi olarak kullanir; base framework fork'lanmaz veya depoya kopyalanmaz.
+- Baslatma akisi, GitHub baglamini kontrollu kurmak icin `ApplicationRuntime`, `createMcpServer` ve `startStdioServer` ile elle baglanir.
+- Konfigurasyon `createRuntimeConfigSchema` ve `loadConfig` ile genisletilir; arac calisma baglami ise `BaseToolExecutionContext` ustune `GitHubClient` ekler.
+- Streamable HTTP, telemetry ve genel dosya sistemi/shell guvenlik yardimcilari bu urunde bilerek kullanilmaz; cunku urun stdio-first ve GitHub API odakli kalir.
+
 ## Dokumantasyon
 
 - [English docs index](./docs/README.en.md)
