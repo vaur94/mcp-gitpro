@@ -1,6 +1,8 @@
 # VS Code Integration
 
-Use the stdio server entry directly from the built package and pass the token through environment inputs.
+VS Code MCP settings can point directly at the built stdio entry. The safest setup is to keep the token in an input prompt or external environment variable rather than hard-coding it into workspace files.
+
+## Example `.vscode/mcp.json`
 
 ```json
 {
@@ -8,7 +10,11 @@ Use the stdio server entry directly from the built package and pass the token th
     "servers": {
       "mcp-gitpro": {
         "command": "node",
-        "args": ["/full/path/dist/index.js", "--config", "/full/path/mcp-gitpro.config.json"],
+        "args": [
+          "/absolute/path/to/mcp-gitpro/dist/index.js",
+          "--config",
+          "/absolute/path/to/mcp-gitpro/mcp-gitpro.config.json"
+        ],
         "env": {
           "MCP_GITPRO_GITHUB_TOKEN": "${input:github_token}"
         }
@@ -26,4 +32,9 @@ Use the stdio server entry directly from the built package and pass the token th
 }
 ```
 
-Run `npm run build` before connecting, and keep stdout reserved for protocol traffic.
+## Notes
+
+- Run `npm run build` before connecting, and rebuild after TypeScript changes.
+- Keep stdout reserved for protocol traffic; `mcp-gitpro` writes logs to stderr.
+- Prefer absolute paths for both `dist/index.js` and `mcp-gitpro.config.json`.
+- Use `context.readOnly=true` if you want repository inspection without write actions.
