@@ -32,9 +32,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "overrides": {
-    "@semantic-release/npm": "^13.1.5"
-  },
   "keywords": [
     "mcp",
     "model-context-protocol",
@@ -54,9 +51,9 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run tests/unit tests/protocol",
     "test:unit": "vitest run tests/unit",
-    "test:protocol": "npm run build && vitest run tests/protocol",
+    "test:protocol": "tsup && vitest run tests/protocol",
     "test:coverage": "vitest run tests/unit --coverage",
-    "ci:check": "npm run format:check && npm run lint && npm run typecheck && npm run test:coverage && npm run test:protocol",
+    "ci:check": "prettier --check . && eslint . && tsc --noEmit && vitest run tests/unit --coverage && tsup && vitest run tests/protocol",
     "release": "semantic-release",
     "prepack": "npm run build"
   },
