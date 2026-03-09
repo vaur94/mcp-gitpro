@@ -1,3 +1,3 @@
 # Changelog
 
-Bu dosya `semantic-release` tarafindan yonetilecektir.
+Bu dosya `release-it` tarafindan yonetilecektir.

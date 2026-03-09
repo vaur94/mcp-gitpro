@@ -1,6 +1,6 @@
 {
   "name": "mcp-gitpro",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Stdio-first GitHub-focused MCP server scaffold built on @vaur94/mcpbase.",
   "type": "module",
   "main": "./dist/index.js",
@@ -32,9 +32,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "overrides": {
-    "@semantic-release/npm": "^13.1.5"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vaur94/mcp-gitpro.git"
@@ -65,7 +62,7 @@
     "test:protocol": "tsup && vitest run tests/protocol",
     "test:coverage": "vitest run tests/unit --coverage",
     "ci:check": "prettier --check . && eslint . && tsc --noEmit && vitest run tests/unit --coverage && tsup && vitest run tests/protocol",
-    "release": "semantic-release",
+    "release": "release-it",
     "prepack": "npm run build"
   },
   "dependencies": {
@@ -79,18 +76,15 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
-    "@semantic-release/changelog": "^6.0.3",
-    "@semantic-release/git": "^10.0.1",
-    "@semantic-release/github": "^11.0.6",
-    "@semantic-release/npm": "^13.1.5",
+    "@release-it/conventional-changelog": "^10.0.5",
     "@types/node": "^24.5.2",
     "@vitest/coverage-v8": "^3.2.4",
     "eslint": "^9.39.1",
     "eslint-config-prettier": "^10.1.8",
     "globals": "^16.4.0",
     "prettier": "^3.6.2",
+    "release-it": "^19.2.4",
     "rimraf": "^6.0.1",
-    "semantic-release": "^24.2.9",
     "tsup": "^8.5.0",
     "typescript": "^5.9.2",
     "typescript-eslint": "^8.46.0",

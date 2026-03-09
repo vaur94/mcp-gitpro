@@ -39,7 +39,7 @@ mcp-gitpro/
 - ESM only; use `.js` extensions in TypeScript imports.
 - Runtime and user-facing text stays in Turkish.
 - Prefer short tool descriptions and structured MCP outputs.
-- Keep changes aligned with `mcpbase` package shape: `tsup`, Vitest, semantic-release, and language-separated docs under `docs/en/` and `docs/tr/`.
+- Keep changes aligned with `mcpbase` package shape: `tsup`, Vitest, automated release workflow, and language-separated docs under `docs/en/` and `docs/tr/`.
 - Coverage thresholds matter: lines/functions/statements 90, branches 80.
 
 ## ANTI-PATTERNS (THIS PROJECT)
@@ -53,7 +53,7 @@ mcp-gitpro/
 
 - Tool surface is intentionally compact: prefer strengthening existing GitHub tools over adding broad low-value endpoints.
 - Read-only mode and tool/toolset allowlists are part of the product contract, not optional polish.
-- Release workflow must stay green even when `NPM_TOKEN` is absent; publish should skip cleanly rather than fail the repo.
+- Release workflow must stay green with npm trusted publishing and without long-lived npm tokens.
 
 ## COMMANDS
 
