@@ -1,14 +1,14 @@
 # OpenCode Integration
 
-OpenCode documents local MCP servers under the `mcp` key in `opencode.json`, with `type: "local"` and a command array. For `mcp-gitpro`, point OpenCode at the built stdio entry and pass the GitHub token through `environment`.
+Use this flow:
 
-## Prerequisites
+```bash
+bash ./scripts/install-local.sh
+```
 
-1. Build the project with `npm run build` or `bash ./scripts/install-local.sh`.
-2. Keep an explicit config file at `/absolute/path/to/mcp-gitpro/mcp-gitpro.config.json`.
-3. Provide `MCP_GITPRO_GITHUB_TOKEN` from your shell or OpenCode config.
+Then add one local MCP entry to `opencode.json`.
 
-## Example `opencode.json`
+## Example
 
 ```json
 {
@@ -32,9 +32,4 @@ OpenCode documents local MCP servers under the `mcp` key in `opencode.json`, wit
 }
 ```
 
-## Notes
-
-- OpenCode starts the server as a local stdio process, so stdout must stay reserved for MCP traffic.
-- `mcp-gitpro` already logs to stderr through `mcpbase`; do not wrap it with shell helpers that print to stdout.
-- If you only want discovery and read operations in shared environments, set `context.readOnly` to `true` in `mcp-gitpro.config.json`.
-- To reduce context pressure, limit `context.toolsets` or `context.tools` instead of exposing every tool by default.
+Keep the config path absolute and pass the token through `environment`. If you only need safe inspection, set `context.readOnly=true` in `mcp-gitpro.config.json`.

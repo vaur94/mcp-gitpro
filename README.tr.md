@@ -16,46 +16,40 @@
 
 ## 📦 Kurulum
 
-### Gereksinimler
-
 - Node.js `>=22.14.0`
 - npm `>=10`
 - `MCP_GITPRO_GITHUB_TOKEN` olarak erisilebilir bir GitHub tokeni
 
-### Yerel kurulum script'i
+Tercih edilen yerel kurulum:
 
 ```bash
 bash ./scripts/install-local.sh
 ```
 
-Bu script bagimliliklari kurar, sunucuyu derler ve testleri calistirir.
-
-### Elle kurulum
-
-```bash
-npm install
-npm run build
-npm test
-```
-
-Repo varsayimlari ve davranis bayraklari icin `mcp-gitpro.config.json` kullanin; secret degerleri kaynak koda yazmayin.
+Bu script bagimliliklari kurar, sunucuyu derler ve kontrolleri bir kez calistirir.
 
 ## ⚡ Hizli Baslangic
 
-### Minimal yerel calistirma
+1. Bir kez kur ve derle:
+
+```bash
+bash ./scripts/install-local.sh
+```
+
+2. Local stdio sunucusunu calistir:
 
 ```bash
 export MCP_GITPRO_GITHUB_TOKEN=YOUR_GITHUB_TOKEN
 node ./dist/index.js --config ./mcp-gitpro.config.json
 ```
 
-### Host baglamadan once kalite kapisi
+3. Istege bagli son kontrol:
 
 ```bash
 npm run ci:check
 ```
 
-### Tum stdio host'larda ortak degerler
+Tum host'larda ortak degerler:
 
 - calistirici: `node`
 - giris noktasi: `/absolute/path/to/mcp-gitpro/dist/index.js`
@@ -64,6 +58,13 @@ npm run ci:check
 - protokol kurali: stdout MCP icin ayrilir; loglar stderr'e gider
 
 ## 🔌 Entegrasyon Rehberleri
+
+Tum rehberler ayni duzende gider:
+
+1. `bash ./scripts/install-local.sh` calistir
+2. host'u `dist/index.js` dosyasina bagla
+3. `--config /absolute/path/to/mcp-gitpro/mcp-gitpro.config.json` ver
+4. `MCP_GITPRO_GITHUB_TOKEN` gec
 
 | Host            | Entegrasyon modeli                                         | Rehber                                              |
 | --------------- | ---------------------------------------------------------- | --------------------------------------------------- |

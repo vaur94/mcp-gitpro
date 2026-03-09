@@ -1,14 +1,14 @@
 # OpenCode Entegrasyonu
 
-OpenCode, local MCP sunucularini `opencode.json` dosyasinda `mcp` anahtari altinda, `type: "local"` ve command dizisi ile tanimlar. `mcp-gitpro` icin derlenmis stdio girisini ve GitHub token ortam degiskenini birlikte verin.
+Bu akisla ilerleyin:
 
-## On kosullar
+```bash
+bash ./scripts/install-local.sh
+```
 
-1. `npm run build` veya `bash ./scripts/install-local.sh` ile projeyi derleyin.
-2. `/absolute/path/to/mcp-gitpro/mcp-gitpro.config.json` gibi acik bir config dosyasi yolu kullanin.
-3. `MCP_GITPRO_GITHUB_TOKEN` degerini shell ortamindan veya OpenCode config'inden gecirin.
+Ardindan `opencode.json` icine tek bir local MCP girisi ekleyin.
 
-## Ornek `opencode.json`
+## Ornek
 
 ```json
 {
@@ -32,9 +32,4 @@ OpenCode, local MCP sunucularini `opencode.json` dosyasinda `mcp` anahtari altin
 }
 ```
 
-## Notlar
-
-- OpenCode sunucuyu local stdio process olarak baslatir; bu nedenle stdout MCP trafigine ayrilmali.
-- `mcp-gitpro`, `mcpbase` uzerinden stderr'e log yazar; stdout'a ekstra cikti basan shell wrapper'lari kullanmayin.
-- Paylasilan ortamlarda yalnizca okuma istiyorsaniz `mcp-gitpro.config.json` icinde `context.readOnly=true` ayarlayin.
-- Gereksiz context tuketimini azaltmak icin tum araclari acmak yerine `context.toolsets` veya `context.tools` ile daraltma yapin.
+Config yolunu absolute verin ve token'i `environment` uzerinden gecin. Yalnizca guvenli inceleme gerekiyorsa `context.readOnly=true` ile baslayin.

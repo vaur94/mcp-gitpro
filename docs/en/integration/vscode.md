@@ -1,8 +1,14 @@
 # VS Code Integration
 
-VS Code MCP settings can point directly at the built stdio entry. The safest setup is to keep the token in an input prompt or external environment variable rather than hard-coding it into workspace files.
+Use this flow:
 
-## Example `.vscode/mcp.json`
+```bash
+bash ./scripts/install-local.sh
+```
+
+Then add one MCP entry to `.vscode/mcp.json`.
+
+## Example
 
 ```json
 {
@@ -32,9 +38,4 @@ VS Code MCP settings can point directly at the built stdio entry. The safest set
 }
 ```
 
-## Notes
-
-- Run `npm run build` before connecting, and rebuild after TypeScript changes.
-- Keep stdout reserved for protocol traffic; `mcp-gitpro` writes logs to stderr.
-- Prefer absolute paths for both `dist/index.js` and `mcp-gitpro.config.json`.
-- Use `context.readOnly=true` if you want repository inspection without write actions.
+Use absolute paths for `dist/index.js` and `mcp-gitpro.config.json`. If you only want safe inspection, start with `context.readOnly=true`.

@@ -13,3 +13,10 @@
 - npm trusted publishing configured for `vaur94/mcp-gitpro` and `ci.yml`
 
 The release job needs `id-token: write`, full git history, and the npm trusted publisher mapping to stay token-free.
+
+## Known-good baseline
+
+- `release-it` is the active release tool.
+- The release workflow ignores pushes whose head commit starts with `chore(release):` to avoid self-triggered publish loops.
+- The repository and npm package are aligned at `v1.0.1` / `1.0.1`.
+- GitHub Actions uses the bot identity environment variables in the release step so release commits and tags can be created without interactive git setup.

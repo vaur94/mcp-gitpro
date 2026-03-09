@@ -16,46 +16,40 @@
 
 ## 📦 Installation
 
-### Requirements
-
 - Node.js `>=22.14.0`
 - npm `>=10`
 - A GitHub token available as `MCP_GITPRO_GITHUB_TOKEN`
 
-### Local install script
+Preferred local setup:
 
 ```bash
 bash ./scripts/install-local.sh
 ```
 
-The script installs dependencies, builds the server, and runs the test suite.
-
-### Manual setup
-
-```bash
-npm install
-npm run build
-npm test
-```
-
-Use `mcp-gitpro.config.json` for repo defaults and behavior flags, and keep secrets out of source control.
+This installs dependencies, builds the server, and runs the checks once.
 
 ## ⚡ Quick Start
 
-### Minimal local launch
+1. Install and build once:
+
+```bash
+bash ./scripts/install-local.sh
+```
+
+2. Launch the local stdio server:
 
 ```bash
 export MCP_GITPRO_GITHUB_TOKEN=YOUR_GITHUB_TOKEN
 node ./dist/index.js --config ./mcp-gitpro.config.json
 ```
 
-### Quality gate before connecting a host
+3. Optional pre-host verification:
 
 ```bash
 npm run ci:check
 ```
 
-### Common stdio values across hosts
+Common host values:
 
 - launcher: `node`
 - entrypoint: `/absolute/path/to/mcp-gitpro/dist/index.js`
@@ -64,6 +58,13 @@ npm run ci:check
 - protocol rule: stdout is reserved for MCP; logs belong on stderr
 
 ## 🔌 Integration Guides
+
+Each guide follows the same pattern:
+
+1. run `bash ./scripts/install-local.sh`
+2. point the host to `dist/index.js`
+3. pass `--config /absolute/path/to/mcp-gitpro/mcp-gitpro.config.json`
+4. provide `MCP_GITPRO_GITHUB_TOKEN`
 
 | Host            | Integration model                                      | Guide                                               |
 | --------------- | ------------------------------------------------------ | --------------------------------------------------- |

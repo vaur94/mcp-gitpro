@@ -1,20 +1,14 @@
 # Antigravity Entegrasyonu
 
-Antigravity, local stdio MCP sunucularini `mcpServers` JSON nesnesi uzerinden tanimlar. En kritik nokta executable yollarini absolute vermektir; cunku Antigravity her zaman interaktif shell `PATH` degerini miras almayabilir.
+Bu akisla ilerleyin:
 
-## Onerilen kurulum degerleri
+```bash
+bash ./scripts/install-local.sh
+```
 
-- command: `/absolute/path/to/node`
-- args:
-  1. `/absolute/path/to/mcp-gitpro/dist/index.js`
-  2. `--config`
-  3. `/absolute/path/to/mcp-gitpro/mcp-gitpro.config.json`
-- env:
-  - `MCP_GITPRO_GITHUB_TOKEN=...`
+Ardindan absolute path kullanan tek bir `mcpServers` girisi ekleyin.
 
-## Temsilci JSON ornegi
-
-Antigravity surumunuz JSON tabanli MCP ayari sunuyorsa giris su sekilde olmalidir:
+## Ornek
 
 ```json
 {
@@ -34,10 +28,4 @@ Antigravity surumunuz JSON tabanli MCP ayari sunuyorsa giris su sekilde olmalidi
 }
 ```
 
-## Notlar
-
-- Baglanmadan once paketi derleyin.
-- Loglar icin stderr, protokol trafigi icin stdout kullanin.
-- Ilk kurulumda acik config yolu tercih edin.
-- Hem Node.js executable'ini hem de varsa wrapper komutlarini absolute path ile verin.
-- Paylasilan ortamlarda yazma araclarini acmadan once `context.readOnly=true` ile baslamak daha guvenlidir.
+Hem Node.js executable'ini hem de config yolunu absolute verin. Paylasilan ortamlarda `context.readOnly=true` ile baslamak daha guvenlidir.

@@ -1,8 +1,14 @@
 # VS Code Entegrasyonu
 
-VS Code MCP ayarlari derlenmis stdio girisini dogrudan kullanabilir. En guvenli kurulum, token'i workspace dosyasina gommek yerine input prompt veya harici ortam degiskeni uzerinden gecirmektir.
+Bu akisla ilerleyin:
 
-## Ornek `.vscode/mcp.json`
+```bash
+bash ./scripts/install-local.sh
+```
+
+Ardindan `.vscode/mcp.json` icine tek bir MCP girisi ekleyin.
+
+## Ornek
 
 ```json
 {
@@ -32,9 +38,4 @@ VS Code MCP ayarlari derlenmis stdio girisini dogrudan kullanabilir. En guvenli 
 }
 ```
 
-## Notlar
-
-- Baglanmadan once `npm run build` calistirin; TypeScript degisikliginden sonra yeniden derleyin.
-- stdout sadece protokol trafigine ayrilmali; `mcp-gitpro` loglari stderr'e yazar.
-- Hem `dist/index.js` hem de `mcp-gitpro.config.json` icin absolute path kullanin.
-- Sadece repo inceleme istiyorsaniz `context.readOnly=true` ile baslayin.
+`dist/index.js` ve `mcp-gitpro.config.json` icin absolute path kullanin. Yalnizca guvenli inceleme gerekiyorsa `context.readOnly=true` ile baslayin.
