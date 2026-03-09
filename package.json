@@ -1,13 +1,13 @@
 {
   "name": "mcp-gitpro",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Stdio-first GitHub-focused MCP server scaffold built on @vaur94/mcpbase.",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "bin": {
-    "mcp-gitpro": "./bin/cli.js"
+    "mcp-gitpro": "bin/cli.js"
   },
   "exports": {
     ".": {
