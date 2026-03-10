@@ -1,5 +1,7 @@
 # OpenCode Entegrasyonu
 
+English version: [docs/en/integration/opencode.md](../../en/integration/opencode.md)
+
 Bu akisla ilerleyin:
 
 ```bash
@@ -33,3 +35,5 @@ Ardindan `opencode.json` icine tek bir local MCP girisi ekleyin.
 ```
 
 Config yolunu absolute verin ve token'i `environment` uzerinden gecin. Yalnizca guvenli inceleme gerekiyorsa `context.readOnly=true` ile baslayin.
+
+Son guncelleme: 2026-03-10

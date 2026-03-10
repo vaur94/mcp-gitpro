@@ -1,5 +1,7 @@
 # Surum Sureci
 
+English version: [docs/en/developer-guide/release-process.md](../../en/developer-guide/release-process.md)
+
 ## Akis
 
 1. Conventional commit mesajlari `release-it` ve conventional changelog eklentisi tarafindan analiz edilir.
@@ -18,5 +20,7 @@ Release isi icin `id-token: write`, tam git gecmisi ve npm trusted publisher esl
 
 - Aktif surum araci `release-it`.
 - Release workflow, kendi kendini tekrar tetikleyen publish dongulerini engellemek icin `chore(release):` ile baslayan push'lari release adiminda dislar.
-- Repo ve npm paketi `v1.0.1` / `1.0.1` durumunda birbiriyle hizalidir.
+- `package.json` su anda `1.0.2` surumunu tasir; buna karsilik `mcp-gitpro.config.json`, `src/config/default-config.ts` ve `src/github/client.ts` icindeki bazi runtime/config sabitleri halen `0.1.0` degerini gosterir.
 - GitHub Actions release adiminda bot identity ortam degiskenleri kullanilir; boylece interaktif git ayari gerektirmeden release commit ve tag olusturulabilir.
+
+Son guncelleme: 2026-03-10

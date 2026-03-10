@@ -20,15 +20,19 @@
 - npm `>=10`
 - `MCP_GITPRO_GITHUB_TOKEN` olarak erisilebilir bir GitHub tokeni
 
-Tercih edilen yerel kurulum:
+Asagidaki kurulum akisi bu repo kopyasi icindir.
+
+Tercih edilen repo-ici kurulum:
 
 ```bash
 bash ./scripts/install-local.sh
 ```
 
-Bu script bagimliliklari kurar, sunucuyu derler ve kontrolleri bir kez calistirir.
+Bu script bagimliliklari kurar, sunucuyu derler ve bir kez `npm test` calistirir.
 
 ## ⚡ Hizli Baslangic
+
+Asagidaki komutlar `scripts/install-local.sh` ve `mcp-gitpro.config.json` dosyalarinin bulundugu bu repo kopyasini varsayar.
 
 1. Bir kez kur ve derle:
 
@@ -149,11 +153,15 @@ mcp-gitpro/
 
 ## 📚 Dokumantasyon
 
-- English docs index: [`docs/en/README.md`](./docs/en/README.md)
-- Turkce docs index: [`docs/tr/README.md`](./docs/tr/README.md)
+- English docs index: [`docs/en/index.md`](./docs/en/index.md)
+- Turkce docs index: [`docs/tr/index.md`](./docs/tr/index.md)
+- Hizli baslangic: [`docs/tr/quick-start.md`](./docs/tr/quick-start.md)
+- Kullanim: [`docs/tr/usage.md`](./docs/tr/usage.md)
 - English configuration: [`docs/en/configuration.md`](./docs/en/configuration.md)
 - Turkce configuration: [`docs/tr/configuration.md`](./docs/tr/configuration.md)
-- Security policy: [`.github/SECURITY.md`](./.github/SECURITY.md)
+- Guvenlik politikasi: [`SECURITY.tr.md`](./SECURITY.tr.md)
+- Katki rehberi: [`CONTRIBUTING.tr.md`](./CONTRIBUTING.tr.md)
+- Destek: [`SUPPORT.tr.md`](./SUPPORT.tr.md)
 
 ## 🧪 Kalite Kapilari
 
@@ -181,3 +189,5 @@ Guvenlik kontrolleri token tabanli kimlik dogrulama, read-only mod, tool allowli
 ## 📄 Lisans
 
 MIT - [`LICENSE`](./LICENSE).
+
+Son guncelleme: 2026-03-10

@@ -1,5 +1,7 @@
 # Configuration
 
+Turkce surum: [docs/tr/configuration.md](../tr/configuration.md)
+
 `mcp-gitpro` reads configuration from `mcp-gitpro.config.json` and the `MCP_GITPRO_` environment prefix.
 
 ## Precedence
@@ -26,3 +28,5 @@
 - `maxFileLines`: `200`
 - `maxDiffLines`: `200`
 - `maxBodyChars`: `6000`
+
+Last updated: 2026-03-10

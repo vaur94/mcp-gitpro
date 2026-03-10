@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security reports
+    url: https://github.com/vaur94/mcp-gitpro/security/advisories/new
+    about: Use private reporting for vulnerabilities and other security-sensitive issues.

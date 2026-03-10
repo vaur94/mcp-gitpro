@@ -1,5 +1,7 @@
 # Codex Integration
 
+Turkce surum: [docs/tr/integration/codex.md](../../tr/integration/codex.md)
+
 Use this flow:
 
 ```bash
@@ -26,3 +28,5 @@ env = { MCP_GITPRO_GITHUB_TOKEN = "YOUR_GITHUB_TOKEN" }
 ```
 
 Use absolute paths for `dist/index.js` and `mcp-gitpro.config.json`. For safer repo inspection, start with `context.readOnly=true`.
+
+Last updated: 2026-03-10

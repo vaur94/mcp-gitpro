@@ -1,6 +1,10 @@
 # 📚 mcp-gitpro Dokumantasyonu
 
+English version: [docs/en/README.md](../en/README.md)
+
 `mcp-gitpro` icin Turkce dokumantasyon agacina hos geldiniz.
+
+Kanolojik Turkce giris noktasi icin [docs/tr/index.md](./index.md) sayfasini kullanin.
 
 Bu dokumantasyon yapisi dil bazli olarak bilerek ayrilmistir:
 
@@ -29,3 +33,5 @@ Bu dokumantasyon yapisi dil bazli olarak bilerek ayrilmistir:
 
 - Ana proje ozeti: [`README.tr.md`](../../README.tr.md)
 - English belgeler: [`../en/README.md`](../en/README.md)
+
+Son guncelleme: 2026-03-10

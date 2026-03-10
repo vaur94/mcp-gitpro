@@ -1,5 +1,7 @@
 # VS Code Entegrasyonu
 
+English version: [docs/en/integration/vscode.md](../../en/integration/vscode.md)
+
 Bu akisla ilerleyin:
 
 ```bash
@@ -39,3 +41,5 @@ Ardindan `.vscode/mcp.json` icine tek bir MCP girisi ekleyin.
 ```
 
 `dist/index.js` ve `mcp-gitpro.config.json` icin absolute path kullanin. Yalnizca guvenli inceleme gerekiyorsa `context.readOnly=true` ile baslayin.
+
+Son guncelleme: 2026-03-10

@@ -1,5 +1,7 @@
 # Codex Entegrasyonu
 
+English version: [docs/en/integration/codex.md](../../en/integration/codex.md)
+
 Bu akisla ilerleyin:
 
 ```bash
@@ -26,3 +28,5 @@ env = { MCP_GITPRO_GITHUB_TOKEN = "YOUR_GITHUB_TOKEN" }
 ```
 
 `dist/index.js` ve `mcp-gitpro.config.json` icin absolute path kullanin. Guvenli inceleme gerekiyorsa `context.readOnly=true` ile baslayin.
+
+Son guncelleme: 2026-03-10

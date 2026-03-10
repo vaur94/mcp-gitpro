@@ -1,5 +1,7 @@
 # Antigravity Entegrasyonu
 
+English version: [docs/en/integration/antigravity.md](../../en/integration/antigravity.md)
+
 Bu akisla ilerleyin:
 
 ```bash
@@ -29,3 +31,5 @@ Ardindan absolute path kullanan tek bir `mcpServers` girisi ekleyin.
 ```
 
 Hem Node.js executable'ini hem de config yolunu absolute verin. Paylasilan ortamlarda `context.readOnly=true` ile baslamak daha guvenlidir.
+
+Son guncelleme: 2026-03-10

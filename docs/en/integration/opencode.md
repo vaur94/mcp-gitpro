@@ -1,5 +1,7 @@
 # OpenCode Integration
 
+Turkce surum: [docs/tr/integration/opencode.md](../../tr/integration/opencode.md)
+
 Use this flow:
 
 ```bash
@@ -33,3 +35,5 @@ Then add one local MCP entry to `opencode.json`.
 ```
 
 Keep the config path absolute and pass the token through `environment`. If you only need safe inspection, set `context.readOnly=true` in `mcp-gitpro.config.json`.
+
+Last updated: 2026-03-10

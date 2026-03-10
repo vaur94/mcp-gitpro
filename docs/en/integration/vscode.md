@@ -1,5 +1,7 @@
 # VS Code Integration
 
+Turkce surum: [docs/tr/integration/vscode.md](../../tr/integration/vscode.md)
+
 Use this flow:
 
 ```bash
@@ -39,3 +41,5 @@ Then add one MCP entry to `.vscode/mcp.json`.
 ```
 
 Use absolute paths for `dist/index.js` and `mcp-gitpro.config.json`. If you only want safe inspection, start with `context.readOnly=true`.
+
+Last updated: 2026-03-10

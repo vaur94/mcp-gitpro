@@ -1,5 +1,7 @@
 # Local Development
 
+Turkce surum: [docs/tr/developer-guide/local-development.md](../../tr/developer-guide/local-development.md)
+
 ## Setup
 
 1. `npm install`
@@ -27,3 +29,5 @@
 
 - Protocol tests use the built `dist/index.js` entrypoint.
 - Unit tests mock GitHub behavior and do not require live API access.
+
+Last updated: 2026-03-10

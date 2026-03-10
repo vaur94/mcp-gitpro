@@ -1,5 +1,7 @@
 # Tools
 
+Turkce surum: [docs/tr/tools.md](../tr/tools.md)
+
 `mcp-gitpro` exposes a compact 10-tool surface:
 
 - `github_context`
@@ -20,3 +22,5 @@
 - write tools are removed when `context.readOnly=true`
 - file, diff, and issue/PR body fields are capped before returning
 - `actions_read` returns workflow metadata plus a log download URL, not inline log previews
+
+Last updated: 2026-03-10

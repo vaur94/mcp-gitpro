@@ -1,5 +1,7 @@
 # Konfigurasyon
 
+English version: [docs/en/configuration.md](../en/configuration.md)
+
 `mcp-gitpro`, `mcp-gitpro.config.json` dosyasini ve `MCP_GITPRO_` ortam degiskeni on ekini kullanir.
 
 ## Oncelik sirasi
@@ -26,3 +28,5 @@
 - `maxFileLines`: `200`
 - `maxDiffLines`: `200`
 - `maxBodyChars`: `6000`
+
+Son guncelleme: 2026-03-10

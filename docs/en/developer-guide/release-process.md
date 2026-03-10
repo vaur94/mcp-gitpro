@@ -1,5 +1,7 @@
 # Release Process
 
+Turkce surum: [docs/tr/developer-guide/release-process.md](../../tr/developer-guide/release-process.md)
+
 ## Flow
 
 1. Conventional commits are analyzed by `release-it` with the conventional changelog plugin.
@@ -18,5 +20,7 @@ The release job needs `id-token: write`, full git history, and the npm trusted p
 
 - `release-it` is the active release tool.
 - The release workflow ignores pushes whose head commit starts with `chore(release):` to avoid self-triggered publish loops.
-- The repository and npm package are aligned at `v1.0.1` / `1.0.1`.
+- `package.json` currently advertises `1.0.2`, while some runtime/config literals still read `0.1.0` in `mcp-gitpro.config.json`, `src/config/default-config.ts`, and `src/github/client.ts`.
 - GitHub Actions uses the bot identity environment variables in the release step so release commits and tags can be created without interactive git setup.
+
+Last updated: 2026-03-10

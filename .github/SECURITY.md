@@ -1,5 +1,7 @@
 # Security Policy
 
+Root documentation version: [`../SECURITY.md`](../SECURITY.md)
+
 Thanks for helping keep `mcp-gitpro` safe.
 
 ## Supported Versions
@@ -15,11 +17,11 @@ This project currently supports security fixes on the latest code published from
 
 Please do not open a public GitHub issue for security-sensitive reports.
 
-Instead:
+Use a private security advisory through the GitHub Security tab for this repository.
 
-1. Open a private security advisory through the GitHub Security tab for this repository.
-2. If that is not possible, contact the maintainer privately before publishing details.
-3. Include reproduction steps, impacted configuration, and whether the issue affects runtime MCP behavior or only development/release tooling.
+No alternate private reporting channel is currently documented here. If the advisory flow is unavailable, maintainer confirmation is required before any disclosure outside that channel.
+
+Include reproduction steps, impacted configuration, and whether the issue affects runtime MCP behavior or only development/release tooling.
 
 We will try to acknowledge valid reports quickly and coordinate a fix before public disclosure when reasonable.
 
@@ -40,3 +42,5 @@ Security reports are still welcome when they affect:
 - MCP protocol output boundaries
 - GitHub API request handling
 - release artifacts published from this repository
+
+Last updated: 2026-03-10

@@ -1,6 +1,10 @@
 # 📚 mcp-gitpro Documentation
 
+Turkce surum: [docs/tr/README.md](../tr/README.md)
+
 Welcome to the English documentation for `mcp-gitpro`.
+
+For the canonical English docs entry point, use [docs/en/index.md](./index.md).
 
 This documentation tree is intentionally separated by language:
 
@@ -29,3 +33,5 @@ This documentation tree is intentionally separated by language:
 
 - Root project overview: [`README.md`](../../README.md)
 - Turkish documentation: [`../tr/README.md`](../tr/README.md)
+
+Last updated: 2026-03-10

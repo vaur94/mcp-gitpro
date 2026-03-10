@@ -1,5 +1,7 @@
 # Yerel Gelistirme
 
+English version: [docs/en/developer-guide/local-development.md](../../en/developer-guide/local-development.md)
+
 ## Kurulum
 
 1. `npm install`
@@ -27,3 +29,5 @@
 
 - Protokol testleri derlenmis `dist/index.js` giris noktasini kullanir.
 - Unit testler GitHub davranisini mock'lar ve canli API erisimi gerektirmez.
+
+Son guncelleme: 2026-03-10

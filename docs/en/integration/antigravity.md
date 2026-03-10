@@ -1,5 +1,7 @@
 # Antigravity Integration
 
+Turkce surum: [docs/tr/integration/antigravity.md](../../tr/integration/antigravity.md)
+
 Use this flow:
 
 ```bash
@@ -29,3 +31,5 @@ Then add one `mcpServers` entry with absolute paths.
 ```
 
 Use absolute paths for both Node.js and the config file. In shared workspaces, start with `context.readOnly=true`.
+
+Last updated: 2026-03-10

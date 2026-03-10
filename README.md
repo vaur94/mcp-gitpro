@@ -20,15 +20,19 @@
 - npm `>=10`
 - A GitHub token available as `MCP_GITPRO_GITHUB_TOKEN`
 
-Preferred local setup:
+The setup below is for a local checkout of this repository.
+
+Preferred repo-local setup:
 
 ```bash
 bash ./scripts/install-local.sh
 ```
 
-This installs dependencies, builds the server, and runs the checks once.
+This installs dependencies, builds the server, and runs `npm test` once.
 
 ## ⚡ Quick Start
+
+The commands below assume you are running from a clone of this repository, where `scripts/install-local.sh` and `mcp-gitpro.config.json` are available.
 
 1. Install and build once:
 
@@ -149,11 +153,15 @@ mcp-gitpro/
 
 ## 📚 Documentation
 
-- English docs index: [`docs/en/README.md`](./docs/en/README.md)
-- Turkish docs index: [`docs/tr/README.md`](./docs/tr/README.md)
+- English docs index: [`docs/en/index.md`](./docs/en/index.md)
+- Turkish docs index: [`docs/tr/index.md`](./docs/tr/index.md)
+- Quick start: [`docs/en/quick-start.md`](./docs/en/quick-start.md)
+- Usage: [`docs/en/usage.md`](./docs/en/usage.md)
 - English configuration: [`docs/en/configuration.md`](./docs/en/configuration.md)
 - Turkish configuration: [`docs/tr/configuration.md`](./docs/tr/configuration.md)
-- Security policy: [`.github/SECURITY.md`](./.github/SECURITY.md)
+- Security policy: [`SECURITY.md`](./SECURITY.md)
+- Contributing: [`CONTRIBUTING.md`](./CONTRIBUTING.md)
+- Support: [`SUPPORT.md`](./SUPPORT.md)
 
 ## 🧪 Quality Gates
 
@@ -181,3 +189,5 @@ Security controls include token-based auth, read-only mode, tool allowlists, out
 ## 📄 License
 
 MIT - see [`LICENSE`](./LICENSE).
+
+Last updated: 2026-03-10

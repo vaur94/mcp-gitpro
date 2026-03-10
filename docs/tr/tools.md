@@ -1,5 +1,7 @@
 # Araclar
 
+English version: [docs/en/tools.md](../en/tools.md)
+
 `mcp-gitpro`, 10 araclik kucuk ama yuksek degerli bir yuzey sunar:
 
 - `github_context`
@@ -20,3 +22,5 @@
 - Yazma araclari `context.readOnly=true` ise kayittan dusurulur.
 - Buyuk yanitlar modele gitmeden once kirpilir.
 - `actions_read`, satir ici log onizlemesi yerine workflow metaverisi ve log indirme adresi dondurur.
+
+Son guncelleme: 2026-03-10
