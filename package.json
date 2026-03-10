@@ -1,6 +1,6 @@
 {
   "name": "mcp-gitpro",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Stdio-first GitHub-focused MCP server scaffold built on @vaur94/mcpbase.",
   "type": "module",
   "main": "./dist/index.js",
@@ -61,6 +61,7 @@
     "test:unit": "vitest run tests/unit",
     "test:protocol": "tsup && vitest run tests/protocol",
     "test:coverage": "vitest run tests/unit --coverage",
+    "pack:dry-run": "npm pack --dry-run",
     "ci:check": "prettier --check . && eslint . && tsc --noEmit && vitest run tests/unit --coverage && tsup && vitest run tests/protocol",
     "release": "release-it",
     "prepack": "npm run build"

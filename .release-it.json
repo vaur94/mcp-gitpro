@@ -7,19 +7,20 @@
     }
   },
   "git": {
-    "requireBranch": "main",
+    "requireBranch": false,
     "commitMessage": "chore(release): v${version}",
     "tagName": "v${version}",
-    "push": true
+    "tag": false,
+    "push": false
   },
   "npm": {
     "ignoreVersion": true,
-    "publish": true,
+    "publish": false,
     "skipChecks": true,
     "publishArgs": ["--provenance", "--access", "public"]
   },
   "github": {
-    "release": true,
+    "release": false,
     "releaseName": "v${version}"
   }
 }
